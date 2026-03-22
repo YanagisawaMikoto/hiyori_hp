@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIYORI - 美容院</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <!-- 桜の花びらアニメーション用コンテナ -->
+  <div class="sakura-container" id="sakuraContainer"></div>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__container">
+      <!-- ロゴ -->
+      <div class="header__logo">
+        <a href="/">
+          <img src="img/logo_brown.png" alt="HIYORI" class="header__logo-img">
+        </a>
+      </div>
+
+      <!-- PC用ナビゲーション -->
+      <nav class="header__pc-nav">
+        <ul class="header__pc-nav-list">
+          <li class="header__pc-nav-item">
+            <a href="#menu" class="header__pc-nav-link">Menu</a>
+          </li>
+          <li class="header__pc-nav-item">
+            <a href="#style" class="header__pc-nav-link">Style</a>
+          </li>
+          <li class="header__pc-nav-item">
+            <a href="#staff" class="header__pc-nav-link">Staff</a>
+          </li>
+          <li class="header__pc-nav-item">
+            <a href="#qa" class="header__pc-nav-link">Q&A</a>
+          </li>
+          <li class="header__pc-nav-item">
+            <a href="#instagram" class="header__pc-nav-link">Instagram</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- PC用予約ボタン -->
+      <div class="header__cta">
+        <a href="#reserve" class="header__cta-button">予約する</a>
+      </div>
+
+      <!-- モバイル用ナビゲーション -->
+      <nav class="header__nav">
+        <a href="#reserve" class="header__nav-item">
+          <span class="header__nav-icon">
+            <img src="img/icon_schedule.png" alt="ScheduleIcon">
+          </span>
+          <span class="header__nav-text">予約する</span>
+        </a>   
+        <a href="https://www.instagram.com/ryo_ichikawa?igsh=MTk0a3BodnBxcHgzeQ==" class="header__nav-item">
+          <span class="header__nav-icon">
+            <img src="img/icon_Instagram.png" alt="InstagramIcon">
+          </span>
+          <span class="header__nav-text">インスタ</span>
+        </a>
+        <button class="header__nav-item header__menu-btn" id="menuBtn">
+          <span class="header__nav-icon">
+            <img src="img/icon_menu.png" alt="MenuIcon">
+          </span>
+          <span class="header__nav-text">メニュー</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <div class="hamburger-menu__overlay"></div>
+    <div class="hamburger-menu__content">
+      <!-- 閉じるボタン -->
+      <button class="hamburger-menu__close" id="closeBtn">
+        <img src="img/close_btn.png" alt="">
+      </button>
+
+      <!-- メニューリスト -->
+      <nav class="hamburger-menu__nav">
+        <ul class="hamburger-menu__list">
+          <li class="hamburger-menu__item">
+            <a href="#menu" class="hamburger-menu__link">Menu</a>
+          </li>
+          <li class="hamburger-menu__item">
+            <a href="#style" class="hamburger-menu__link">Style</a>
+          </li>
+          <li class="hamburger-menu__item">
+            <a href="#staff" class="hamburger-menu__link">Staff</a>
+          </li>
+          <li class="hamburger-menu__item">
+            <a href="#qa" class="hamburger-menu__link">Q&A</a>
+          </li>
+          <li class="hamburger-menu__item">
+            <a href="#information" class="hamburger-menu__link">Infomation</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 予約ボタン -->
+      <a href="#reserve" class="hamburger-menu__reserve-btn">予約する</a>
+
+      <!-- ロゴ -->
+      <div class="hamburger-menu__logo">
+        <img src="img/logo_brown.png" alt="HIYORI">
+      </div>
+    </div>
+  </div>
+
+  <!-- ファーストビュー -->
+  <section class="fv">
+    <div class="fv__container">
+      <div class="fv__content">
+        <div class="fv__image-wrapper">
+          <img src="img/fv1.ARW.jpg" alt="fv1" class="fv__image">
+          <img src="img/fv2.ARW.jpg" alt="fv2"  class="fv__image">
+          <p class="fv__text">あなた史上、最高の艶髪。</p>
+        </div>
+        <a href="https://www.instagram.com/ryo_ichikawa?igsh=MTk0a3BodnBxcHgzeQ==" class="fv__btn">
+          予約する<br>
+          <span class="fv__btn-sub">-reserve-</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- コンセプトセクション -->
+<section class="concept">
+  <div class="concept__container">
+    <!-- セクションタイトル -->
+    <h2 class="concept__title">Concept</h2>
+
+    <!-- セクション1: 髪質を見極めた"オーダーメイド施術" -->
+    <div class="concept__item">
+      <div class="concept__content">
+        <div class="concept__text-block">
+          <h3 class="concept__heading">髪質を見極めた"オーダーメイド施術"。</h3>
+          <p class="concept__description">
+            丁寧なカウンセリングからお一人おひとりに最適な施術をご提案。<br class="sp-only"><br class="pc-only">
+            「ダメージが気になる」「まとまりにくい」<br class="sp-only">
+            そんなお悩みもプロの技術で艶髪へ導きます。
+          </p>
+        </div>
+        <div class="concept__images">
+          <img src="img/concept1-1.jpg" alt="シャンプー施術" class="concept__image_1-1">
+          <img src="img/concept1-2.jpg" alt="カット施術" class="concept__image_1-2">
+        </div>
+      </div>
+    </div>
+
+    <!-- セクション2: "今までで1番の艶髪"を叶えるために。 -->
+    <div class="concept__item">
+      <div class="concept__content">
+        <div class="concept__text-block">
+          <h3 class="concept__heading">"今までで1番の艶髪"を叶えるために。</h3>
+          <p class="concept__description">
+            お客様一人ひとりに合わせた施術をご提案させていただきます。<br class="sp-only"><br class="pc-only">
+            艶髪の先にある"自信"や"ときめき"までデザインする。<br class="sp-only">
+            それが日和のこだわりです。
+          </p>
+        </div>
+        <div class="concept__images">
+          <img src="img/concept2-1.jpg" alt="ヘアケア施術" class="concept__image_2-1">
+          <img src="img/concept2-2.jpg" alt="ヘアケア商品" class="concept__image_2-2">
+        </div>
+      </div>
+    </div>
+
+    <!-- セクション3: 落ち着いたプライベート空間。 -->
+    <div class="concept__item">
+      <div class="concept__content">
+        <div class="concept__text-block">
+          <h3 class="concept__heading">落ち着いた"プライベート空間"。</h3>
+          <p class="concept__description">
+            目和ではお客様にリラックスしてお過ごしして頂けるよう<br class="sp-only">
+            プライベート空間を確保しております。<br class="sp-only"><br class="pc-only">
+            マンツーマン接客で来店から退店まで<br class="sp-only">
+            スタッフの市川が全て行わせていただきます。
+          </p>
+        </div>
+        <div class="concept__images">
+          <img src="img/concept3-1.jpg" alt="店内空間1" class="concept__image_3-1">
+          <img src="img/concept3-2.jpg" alt="店内空間2" class="concept__image_3-2">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UserVoiceセクション -->
+<section class="uservoice">
+  <div class="uservoice__container">
+    <h2 class="uservoice__title">UserVoice</h2>
+    
+    <!-- カード1 -->
+    <div class="uservoice__item">
+      <div class="uservoice__card">
+        <div class="uservoice__avatar">
+          <img src="img/review01.png" alt="お客様の声1" class="uservoice__avatar-img">
+        </div>
+        <div class="uservoice__content">
+          <h3 class="uservoice__heading">本当に腕のいい美容師さん</h3>
+          <div class="uservoice__rating">★★★★★</div>
+          <p class="uservoice__age">30代／女性</p>
+          <p class="uservoice__text">
+            乾かしただけで縮毛矯正をかけたその日みたいにつるんつるんで天使の輪もできます。アイロンもいらない仕上がりでビックリ過ぎます！本当に腕のいい美容師さんに出会えて嬉しいです！
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- カード2 -->
+    <div class="uservoice__item">
+      <div class="uservoice__card">
+        <div class="uservoice__avatar">
+          <img src="img/review02.png" alt="お客様の声2" class="uservoice__avatar-img">
+        </div>
+        <div class="uservoice__content">
+          <h3 class="uservoice__heading">QOL爆上がり！</h3>
+          <div class="uservoice__rating">★★★★★</div>
+          <p class="uservoice__age">20代／女性</p>
+          <p class="uservoice__text">
+            髪の履歴が複雑なので縮毛矯正でチリチリにならないか不安でしたが、ありえないくらいサラサラです！お手入れも楽ちんでQOL爆上がりです。ストレートする時は絶対に来ます！
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- カード3 -->
+    <div class="uservoice__item">
+      <div class="uservoice__card">
+        <div class="uservoice__avatar">
+          <img src="img/review03.png" alt="お客様の声3" class="uservoice__avatar-img">
+        </div>
+        <div class="uservoice__content">
+          <h3 class="uservoice__heading">サロン帰りのような髪</h3>
+          <div class="uservoice__rating">★★★★★</div>
+          <p class="uservoice__age">40代／女性</p>
+          <p class="uservoice__text">
+            誇張なしにシャンプーのCMのようなツヤと手触りです。1週間たってもシャンプー・ブローなどの普通のケアだけでサロン帰りのような髪をキープしています！
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menuセクション -->
+<section class="menu-section" id="menu">
+  <div class="menu-section__container">
+    <h2 class="menu-section__title">Menu</h2>
+    <p class="menu-section__subtitle">艶のその先へ。</p>
+    <p class="menu-section__description">
+      日和では、お客様一人ひとりの髪質やダメージレベルに合わせた<br class="sp-only">
+      最適な施術をご提案いたします。
+    </p>
+    
+    <!-- メニューカード群 -->
+    <div class="menu-section__cards">
+      <!-- メニューカード1 -->
+      <div class="menu-card">
+        <span class="menu-card__badge">人気No.1</span>
+        <h3 class="menu-card__name">トリートメントストレート</h3>
+        <p class="menu-card__desc">
+          髪の内部から補修し艶と柔らかさを実現する、トリートメント効果の高いストレート矯正です。
+        </p>
+        <ul class="menu-card__points">
+          <li class="menu-card__point">✓ 補修効果が高い</li>
+          <li class="menu-card__point">✓ 艶UP</li>
+        </ul>
+        <div class="menu-card__info">
+          <span class="menu-card__time">所要時間：150分</span>
+          <span class="menu-card__price">¥19,000(税込)</span>
+        </div>
+      </div>
+      
+      <!-- メニューカード2 -->
+      <div class="menu-card">
+        <h3 class="menu-card__name">あなた1人のストレート</h3>
+        <p class="menu-card__desc">
+          お客様お一人おひとりに合わせて薬剤を調合し、最適なストレートをお提案させていただきます。
+        </p>
+        <ul class="menu-card__points">
+          <li class="menu-card__point">✓ 髪質改善</li>
+          <li class="menu-card__point">✓ ダメージに合わせた縮毛矯正</li>
+        </ul>
+        <div class="menu-card__info">
+          <span class="menu-card__time">所要時間：150分</span>
+          <span class="menu-card__price">¥17,000（税込）</span>
+        </div>
+      </div>
+      
+      <!-- メニューカード3 -->
+      <div class="menu-card">
+        <h3 class="menu-card__name">アルサントリートメント</h3>
+        <p class="menu-card__desc">
+          最新の薬剤と技術で、自然な仕上がりの縮毛矯正を実現。ダメージを最小限に抑えます。
+        </p>
+        <ul class="menu-card__points">
+          <li class="menu-card__point">✓ 手触りをよくしたい方</li>
+          <li class="menu-card__point">✓ 美髪になりたい方</li>
+        </ul>
+        <div class="menu-card__info">
+          <span class="menu-card__time">所要時間：90分</span>
+          <span class="menu-card__price">¥11,000（税込）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- StyleGalleryセクション -->
+<section class="style-gallery" id="style">
+  <div class="style-gallery__container">
+    <h2 class="style-gallery__title">StyleGallery</h2>
+    
+    <!-- スライダーラッパー -->
+    <div class="style-gallery__video-wrapper">
+      
+      <!-- スライダー -->
+      <div class="style-gallery__slider">
+        <ul class="style-gallery__list">
+          <li class="style-gallery__item">
+            <a class="style-gallery__video-link" href="https://www.instagram.com/reel/DKo8-Wezz_P/?igsh=MXNnZno0dnE2dmZwYQ==" target="_blank" rel="noopener">
+              <div class="style-gallery__video-circle">
+                <img src="img/style1.jpeg" alt="スタイル1" class="style-gallery__thumb">
+                <span class="style-gallery__play-icon">▶</span>
+              </div>
+            </a>
+          </li>
+          <li class="style-gallery__item">
+            <a class="style-gallery__video-link" href="https://www.instagram.com/reel/DTbz3JzkU6A/?igsh=NDUxa2QybjZrZ2pi" target="_blank" rel="noopener">
+              <div class="style-gallery__video-circle">
+                <img src="img/style2.jpeg" alt="スタイル2" class="style-gallery__thumb">
+                <span class="style-gallery__play-icon">▶</span>
+              </div>
+            </a>
+          </li>
+          <li class="style-gallery__item">
+            <a class="style-gallery__video-link" href="https://www.instagram.com/reel/DTb0bHLEcJa/?igsh=MWpsMDhlYWs5ZnJzeQ==" target="_blank" rel="noopener">
+              <div class="style-gallery__video-circle">
+                <img src="img/style3.jpeg" alt="スタイル3" class="style-gallery__thumb">
+                <span class="style-gallery__play-icon">▶</span>
+              </div>
+            </a>
+          </li>
+          <li class="style-gallery__item">
+            <a class="style-gallery__video-link" href="https://www.instagram.com/reel/DLHgVqFT5tx/?igsh=MWdhaWNqZmhyNnJqaw==" target="_blank" rel="noopener">
+              <div class="style-gallery__video-circle">
+                <img src="img/style4.jpeg" alt="スタイル4" class="style-gallery__thumb">
+                <span class="style-gallery__play-icon">▶</span>
+              </div>
+            </a>
+          </li>
+          <li class="style-gallery__item">
+            <a class="style-gallery__video-link" href="https://www.instagram.com/reel/DKYyW1lO5A5/?igsh=YXk1a291bzVteDBl" target="_blank" rel="noopener">
+              <div class="style-gallery__video-circle">
+                <img src="img/style5.jpeg" alt="スタイル5" class="style-gallery__thumb">
+                <span class="style-gallery__play-icon">▶</span>
+              </div>
+            </a>
+          </li>
+          <!-- JavaScriptで複製されたアイテムがここに追加されます -->
+        </ul>
+      </div>
+      
+    </div>    
+    <!-- Instagramボタン -->
+    <a href="https://www.instagram.com/ryo_ichikawa?igsh=MTk0a3BodnBxcHgzeQ==" target="_blank" rel="noopener" class="style-gallery__btn">
+      Instagram
+    </a>
+  </div>
+</section>
+
+<!-- StaffProfileセクション -->
+<section class="staff" id="staff">
+  <div class="staff__container">
+    <h2 class="staff__title">StaffProfile</h2>
+    
+    <div class="staff__inner">
+      <!-- スタッフ画像エリア -->
+      <div class="staff__image-wrapper">
+        <img src="img/staff.jpg" alt="Ryo Ichikawa" class="staff__image">
+        <h3 class="staff__name">Ryo Ichikawa</h3>
+      </div>
+      
+      <!-- プロフィールエリア -->
+      <div class="staff__profile">
+        <div class="staff__profile-items">
+          <p class="staff__profile-item">出身地：群馬県太田市</p>
+          <p class="staff__profile-item">血液型：O型</p>
+          <p class="staff__profile-item">美容師歴：13年</p>
+        </div>
+        <p class="staff__message">
+          今まで全部が中途半端だった僕が、心の底からハマったもの。<br>
+          それが美容師というお仕事です！<br>
+          毎日楽しく皆様の艶髪を作っています。<br>
+          ぜひ体験してみてください！
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q&Aセクション -->
+<section class="qa" id="qa">
+  <div class="qa__container">
+    <h2 class="qa__title">Q&A</h2>
+    
+    <!-- Q&Aアイテム1 -->
+    <div class="qa__item">
+      <button class="qa__question" type="button" aria-expanded="false">
+        <span class="qa__q-badge">Q</span>
+        <span class="qa__question-text">ブリーチしてても大丈夫ですか？</span>
+        <span class="qa__arrow"></span>
+      </button>
+      <div class="qa__answer">
+        <span class="qa__q-badge">A</span>
+        <p class="qa__answer-text">
+          はい、基本的には大丈夫です。ブリーチ履歴がある髪でも、お客様の髪質やダメージ状態に合わせた施術を行いますので、安心してお任せください。カウンセリング時に詳しく状態を確認させていただきます。
+        </p>
+      </div>
+    </div>
+    
+    <!-- Q&Aアイテム2 -->
+    <div class="qa__item">
+      <button class="qa__question" type="button" aria-expanded="false">
+        <span class="qa__q-badge">Q</span>
+        <span class="qa__question-text">駐車場はありますか？</span>
+        <span class="qa__arrow"></span>
+      </button>
+      <div class="qa__answer">
+        <span class="qa__q-badge">A</span>
+        <p class="qa__answer-text">
+          店舗真裏の砂利のあるエリアでしたらどこでも大丈夫です。
+        </p>
+      </div>
+    </div>
+    
+    <!-- Q&Aアイテム3 -->
+    <div class="qa__item">
+      <button class="qa__question" type="button" aria-expanded="false">
+        <span class="qa__q-badge">Q</span>
+        <span class="qa__question-text">予約は必要ですか？</span>
+        <span class="qa__arrow"></span>
+      </button>
+      <div class="qa__answer">
+        <span class="qa__q-badge">A</span>
+        <p class="qa__answer-text">
+          完全予約制とさせていただいております。マンツーマン接客でお一人おひとりにしっかりと時間をかけて施術を行うため、事前のご予約をお願いいたします。
+        </p>
+      </div>
+    </div>
+    
+    <!-- Q&Aアイテム4 -->
+    <div class="qa__item">
+      <button class="qa__question" type="button" aria-expanded="false">
+        <span class="qa__q-badge">Q</span>
+        <span class="qa__question-text">事前にメニューの相談は可能ですか？</span>
+        <span class="qa__arrow"></span>
+      </button>
+      <div class="qa__answer">
+        <span class="qa__q-badge">A</span>
+        <p class="qa__answer-text">
+          はい、可能です。事前にInstagramのDMやLINEからご相談いただけます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Informationセクション -->
+<section class="information" id="information">
+  <div class="information__container">
+    <h2 class="information__title">Infomation</h2>
+    
+    <div class="information__content">
+      <!-- Addressブロック -->
+      <div class="information__block information__block--address">
+        <h3 class="information__heading">Address</h3>
+        <p class="information__text">〒373-0852</p>
+        <p class="information__text">群馬県太田市新井町501-2</p>
+        
+          <!-- GoogleMapエリア -->
+          <div class="information__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.123050313069!2d139.3750925!3d36.2850641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f21d8f04ebb05%3A0x201fcf28f7b99cf1!2z5pel5ZKM44CcSElZT1JJ44Cc!5e0!3m2!1sja!2sjp!4v1765164014905!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        
+          <p class="information__note information__note--address">※かっぱ寿司さんの隣の建物です。<br>駐車場はお店のすぐ裏手にございます。</p>
+          </div>
+      
+      <!-- Openブロック -->
+      <div class="information__block information__block--open">
+        <h3 class="information__heading">Open</h3>
+        <p class="information__text">8:00〜21:00（予約必須）</p>
+        <p class="information__text">定休日：毎週月曜日</p>
+        
+        <!-- Googleカレンダー -->
+        <div class="information__calendar">
+         <iframe
+            src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40group.calendar.google.com&ctz=Asia%2FTokyo&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+            style="border: 0;"
+            frameborder="0"
+            scrolling="no"
+            title="営業カレンダー">
+        </iframe>
+        </div>
+        
+        <p class="information__note information__note--open">※休みは変わることもございますので<br>カレンダーをご覧下さい。</p>
+      </div>
+      
+      <!-- Paymentブロック -->
+      <div class="information__block information__block--payment">
+        <h3 class="information__heading">Payment</h3>
+        <p class="information__text">現金／クレジットカード</p>
+        <p class="information__note information__note--payment">※交通系IC、電子マネーはご利用いただけません。<br>ご注意ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reserveセクション -->
+<section class="reserve" id="reserve">
+  <div class="reserve__container">
+    <h2 class="reserve__title">Reserve</h2>
+    
+    <div class="reserve__buttons">
+      <a href="https://www.instagram.com/ryo_ichikawa?igsh=MTk0a3BodnBxcHgzeQ==" class="reserve__btn reserve__btn--primary">Instagramから予約</a>
+      <a href="https://example.com/reserve" class="reserve__btn reserve__btn--primary">LINEから予約</a>
+      <a href="tel:0276551820" class="reserve__btn reserve__btn--tel">0276-55-1820</a>
+    </div>
+    
+    <p class="reserve__note">※お電話は出られない場合がございます。</br>
+      InstagramまたはLINEからのご予約がスムーズです。</p>
+  </div>
+</section>
+
+<!-- Footerセクション -->
+<footer class="footer">
+  <div class="footer__container">
+    <!-- ロゴ -->
+    <div class="footer__logo">
+      <img src="img/logo_brown.png" alt="HIYORI">
+    </div>
+    
+    <!-- 店舗情報 -->
+    <div class="footer__info">
+      <p class="footer__shop-name">日和 ～HIYORI～</p>
+      <p class="footer__address">〒373-0852<br>群馬県太田市新井町501-2</p>
+      <p class="footer__tel">TEL：0276-55-1820</p>
+    </div>
+    
+    <!-- SNSアイコン -->
+    <div class="footer__sns">
+      <a href="https://www.instagram.com/ryo_ichikawa?igsh=MTk0a3BodnBxcHgzeQ==" target="_blank" rel="noopener" class="footer__sns-link">
+        <img src="img/icon_Instagram.png" alt="Instagram">
+      </a>
+      <a href="https://example.com/line" target="_blank" rel="noopener" class="footer__sns-link">
+        <img src="img/icon_line.png" alt="LINE">
+      </a>
+    </div>
+    
+    <!-- コピーライト -->
+    <p class="footer__copy">© HIYORI</p>
+  </div>
+</footer>
+
+<script src="js/style.js"></script>
+
+</body>
+</html>
